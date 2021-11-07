@@ -2,5 +2,25 @@
   <main id="main">
     <h1>{{ .Title }}</h1>
     {{ .Content }}
+
+    <h3>Featured Posts</h3>
+    <ul>
+      {{ with .Site.Taxonomies.tags.featured }}
+        {{ range first 3 . }}
+          <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+          </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+    <h3>Recent Posts</h3>
+    <ul>
+      {{ with .Site.Pages }}
+        {{ range first 3 . }}
+          <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
+          </li>
+        {{ end }}
+      {{ end }}
+    </ul>
+
   </main>
 {{ end }}
