@@ -3,7 +3,7 @@
     <h1>{{ .Title }}</h1>
     {{ .Content }}
 
-    <h3>Featured Posts</h3>
+    <h3>Featured Recipes</h3>
     <ul>
       {{ with .Site.Taxonomies.tags.featured }}
         {{ range first 3 . }}
