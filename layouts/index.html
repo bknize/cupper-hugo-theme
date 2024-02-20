@@ -12,9 +12,9 @@
         {{ end }}
       {{ end }}
     </ul>
-    <h3>Recent Posts</h3>
+    <h3>Recent Recipes</h3>
     <ul>
-      {{ range ( first 3 ( where .Site.Pages "Type" "post" ) ) }}
+      {{ range ( first 3 ( where .Site.Pages "Type" "recipes" ) ) }}
       <li><a href="{{ .Page.RelPermalink }}">{{ .Page.Title }}</a>
       </li>
       {{ end }}
